@@ -21,6 +21,10 @@ class FeedViewModel: ObservableObject {
             .map { String($0) }
             .filter { !$0.isEmpty }
     }
+    
+    init(){
+        loadFeed()
+    }
 
     func addSource(_ newSource: String) {
         var current = savedSources

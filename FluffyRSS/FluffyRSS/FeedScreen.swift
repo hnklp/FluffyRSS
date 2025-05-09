@@ -11,7 +11,7 @@ struct FeedScreen: View {
     @ObservedObject var feedViewModel: FeedViewModel
 
     @State private var selectedURL: URL? = nil
-    @State private var showSafari = false
+    @State private var showSafari = true
 
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -55,6 +55,7 @@ struct FeedScreen: View {
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Feed")
+            
             .refreshable {
                 feedViewModel.loadFeed()
             }
